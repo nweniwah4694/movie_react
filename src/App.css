@@ -1,0 +1,27 @@
+.App {
+	text-align: center;
+	background-color: #31dfb7;
+	display: table;
+	width: 100%;
+}
+
+.App-sidebar-wrapper{
+	width: 5%;
+	float: left;	
+	padding-top: 7%;
+}
+ 
+.App-sidebar-wrapper .bar {
+	padding: 20px 10px;
+	background: #282c34;
+}
+
+.App-content-wrapper  {
+	width: 95%;
+	float: left;
+	padding: 3% 5%;
+	box-sizing: border-box;
+	background: #282c34;
+}
+
+
