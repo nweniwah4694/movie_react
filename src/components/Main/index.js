@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { API_KEY, PATH_BASE, PATH_MOVIE, DEFAULT_PAGE, PATH_PAGE } from '../../api';
 import List from '../../components/List';
 import Button from '../../components/Button';
-
 import './index.css';
 
 class Main extends Component {
@@ -11,10 +10,8 @@ class Main extends Component {
     super(props);
 
     this.state = {
-      movies: {},
-      loading: true
+      movies: {}
     };
-
   }
 
   componentDidMount = () => {
@@ -40,8 +37,7 @@ class Main extends Component {
     ]
 
     this.setState({
-      movies: { results: updatedResults, page },
-      loading: false
+      movies: { results: updatedResults, page }
     })
   }
 
@@ -49,20 +45,11 @@ class Main extends Component {
 
     const { movies } = this.state;
     const { results, page } = movies;
-
     return (
       <div className="Main-wrapper">
-        { results &&
-          <List
-            list={results}
-            addToList={(selectedMovie, userList) => this.props.addToList(selectedMovie, userList)}
-            removeFromList={(selectedMovie, userList) => this.props.removeFromList(selectedMovie, userList)}
-            authenticated={this.props.authenticated}
-            favorites={this.props.favorites}
-            watchLater={this.props.watchLater}
-         />
+        { 
+          results && <List list={results} />
         }
-
         <Button
           className="button"
           onClick={() => this.getMovies(this.props.section, page + 1)}
@@ -70,7 +57,6 @@ class Main extends Component {
          />
       </div>
     );
-
   }
 }
 
